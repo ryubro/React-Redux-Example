@@ -1,6 +1,6 @@
 import reducer from './counter';
 // const { connect, Provider } = ReactRedux;
-const { createStore, compose } = Redux;
+import { createStore, compose } from 'redux';
 // const { default: thunkMiddleware } = ReduxThunk;
 
 const store = createStore(reducer);

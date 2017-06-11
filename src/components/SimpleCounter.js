@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from './Button';
 import store from '../reducers/store';
 import { increaseCounter, decreaseCounter } from '../actions/counter';
