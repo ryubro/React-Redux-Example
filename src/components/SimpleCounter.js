@@ -5,7 +5,6 @@ import { increaseCounter, decreaseCounter } from '../actions/counter';
 
 function SimpleCounter(props) {
   const { counter, increaseCounter, decreaseCounter } = props;
-  console.log('What is increaseCounter herer', increaseCounter);
   return <div>
     <h1>{counter}</h1>
     <Button label="+" onClick={increaseCounter}/>
@@ -25,11 +24,10 @@ export default class SimpleCounterContainer extends React.Component {
     this.setState(store.getState());
   }
   render() {
-    console.log('This should be an action object:', increaseCounter());
-    const increaseCounterFunc = () => store.dispatch(increaseCounter());
-    const decreaseCounterFunc = () => store.dispatch(decreaseCounter());
+    const dispatchIncreaseCounter = () => store.dispatch(increaseCounter());
+    const dispatchDecreaseCounter = () => store.dispatch(decreaseCounter());
     return <SimpleCounter counter={this.state.counter}
-             							increaseCounter={increaseCounterFunc}
-             							decreaseCounter={decreaseCounterFunc}/>;
+             							increaseCounter={dispatchIncreaseCounter}
+             							decreaseCounter={dispatchDecreaseCounter}/>;
   }
 }
